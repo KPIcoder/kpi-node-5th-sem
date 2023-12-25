@@ -1,0 +1,33 @@
+{
+  "name": "node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start:dev": "node .",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "npx prettier . --check",
+    "format:fix": "npx prettier . --write"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/KPIcoder/kpi-node-5th-sem.git"
+  },
+  "keywords": [
+    "kpi",
+    "node"
+  ],
+  "author": "Vlad Shchehlov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KPIcoder/kpi-node-5th-sem/issues"
+  },
+  "homepage": "https://github.com/KPIcoder/kpi-node-5th-sem#readme",
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "eslint-plugin-sonarjs": "^0.23.0",
+    "prettier": "3.1.1"
+  }
+}
