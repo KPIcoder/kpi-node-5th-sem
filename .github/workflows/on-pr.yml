@@ -2,7 +2,7 @@
 # https://github.com/firebase/firebase-tools
 
 name: Check code style
-'on': pull_request
+"on": pull_request
 
 # cancel in-progress runs on new commits to same PR (gitub.event.number)
 concurrency:
@@ -17,8 +17,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
-          cache-dependency-path: '**/package-lock.json'
+          cache: "npm"
+          cache-dependency-path: "**/package-lock.json"
       - name: Cache dependencies
         id: cache
         uses: actions/cache@v3
