@@ -1,7 +1,6 @@
 import * as http from "node:http";
 
 const PORT = 8000;
-const HOST = "127.0.0.1";
 
 const server = http.createServer((req, res) => {
   const ip = req.socket.remoteAddress;
@@ -10,8 +9,8 @@ const server = http.createServer((req, res) => {
   res.end(message);
 });
 
-server.listen(PORT, HOST, () =>
-  console.log(`Server listening on ${HOST}:${PORT}`),
+server.listen(PORT, () =>
+  console.log(`Server listening on port ${PORT}`),
 );
 
 server.on("error", (err) => {
