@@ -1,19 +1,12 @@
-import * as http from "node:http";
+// import { router } from './lib/file-router.js';
+import { router as declarativeRouter } from './lib/declarative-router.js';
+import { createHttpServer } from './lib/http-2.js';
+
+import { getController, postController } from './routes/example.controller.js';
 
 const PORT = 8000;
 
-const server = http.createServer((req, res) => {
-  const ip = req.socket.remoteAddress;
-  const message = "Hello client " + ip;
+declarativeRouter.addRoute('/example', 'GET', getController);
+declarativeRouter.addRoute('/example', 'POST', postController);
 
-  res.end(message);
-});
-
-server.listen(PORT, () =>
-  console.log(`Server listening on port ${PORT}`),
-);
-
-server.on("error", (err) => {
-  console.error(err);
-  server.close();
-});
+createHttpServer(declarativeRouter.routes, PORT);
